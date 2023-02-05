@@ -25,7 +25,30 @@ function changeBackground() {
   background(255,255,255);
   // createColorPicker()
 }
-
+function colorPalette(){
+  stroke(255,255,255);
+  strokeWeight(2);
+  fill("red");
+  rect(0,0,30,30);
+  fill("orange");
+  rect(0,30,30,30);
+  fill("yellow");
+  rect(0,60,30,30);
+  fill("green");
+  rect(0,90,30,30);
+  fill("cyan");
+  rect(0,120,30,30);
+  fill("blue");
+  rect(0,150,30,30);
+  fill("magenta");
+  rect(0,180,30,30);
+  fill("brown");
+  rect(0,210,30,30);
+  fill("white");
+  rect(0,240,30,30);
+  fill("black");
+  rect(0,270,30,30);
+}
 function selectColor(){
   if(mouseY <= 30){
     paintcolor = color(255,0,0);
@@ -70,27 +93,3 @@ function selectColor(){
 }
 
 
-function colorPalette(){
-  stroke(255,255,255);
-  strokeWeight(2);
-  fill("red");
-  rect(0,0,30,30);
-  fill("orange");
-  rect(0,30,30,30);
-  fill("yellow");
-  rect(0,60,30,30);
-  fill("green");
-  rect(0,90,30,30);
-  fill("cyan");
-  rect(0,120,30,30);
-  fill("blue");
-  rect(0,150,30,30);
-  fill("magenta");
-  rect(0,180,30,30);
-  fill("brown");
-  rect(0,210,30,30);
-  fill("white");
-  rect(0,240,30,30);
-  fill("black");
-  rect(0,270,30,30);
-}
