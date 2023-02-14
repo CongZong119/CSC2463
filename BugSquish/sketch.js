@@ -35,9 +35,10 @@ function draw() {
     timer -= 0.0167; 
   } else {
     gameOver = true; 
+    background(255);
     fill(255, 0, 0);
     textSize(40);
-    text('Game Over', width / 2 - 70, height / 2);
+    text(`Game Over! Your score is ${squishedCount}`, width / 2 - 70, height / 2);
   }
   
 }
@@ -92,15 +93,21 @@ class Bug {
   }
 
   isClicked(x, y) {
-    let frameWidth = bugImage.width / bugFrames;
-    let frameHeight = bugImage.height;
-    
-    if (x >= this.x && x <= this.x + frameWidth && y >= this.y && y <= this.y + frameHeight) {
-      this.dead = true;
-      this.squished=true;
-      return true;
-    } else {
+    const frameWidth = bugImage.width / bugFrames;
+    const frameHeight = bugImage.height;
+    if (this.dead) {
       return false;
     }
+ 
+    const isWithinBoundsX = x >= this.x && x <= this.x + frameWidth;
+    const isWithinBoundsY = y >= this.y && y <= this.y + frameHeight;
+   
+    if (isWithinBoundsX && isWithinBoundsY) {
+      this.dead = true;
+      this.squished = true;
+      return true;
+    }
+   
+    return false;
   }
 }
